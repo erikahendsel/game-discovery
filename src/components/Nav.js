@@ -20,7 +20,7 @@ const Nav = () => {
 };
 
 const NavStyled = styled.nav`
-  min-height: 10vh;
+  min-height: 8vh;
   display: flex;
   margin: auto;
   justify-content: space-between;
@@ -30,9 +30,6 @@ const NavStyled = styled.nav`
   position: sticky;
   top: 0;
   z-index: 10;
-  a {
-    text-decoration: none;
-  }
   ul {
     display: flex;
     list-style: none;

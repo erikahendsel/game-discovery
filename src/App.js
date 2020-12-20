@@ -10,7 +10,7 @@ function App() {
       <GlobalStyle />
       <Nav />
       <Switch>
-        <Route path="/" exact>
+        <Route path={["/game/:id", "/"]}>
           <Home />
         </Route>
         <Route path="/favorites">
