@@ -37,6 +37,12 @@ const GlobalStyle = createGlobalStyle`
     img {
         display: block;
     }
+    input, button {
+        font-family: 'Lato', sans-serif;
+    }
+    input {
+        font-weight: bold;
+    }
 `;
 
 export default GlobalStyle;

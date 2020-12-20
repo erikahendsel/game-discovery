@@ -70,6 +70,7 @@ const CardShadowStyled = styled.div`
   position: fixed;
   top: 8vh;
   left: 0;
+  z-index: 5;
   &::-webkit-scrollbar {
     width: 0.5em;
   }

@@ -1,10 +1,16 @@
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Nav = () => {
+  const dispatch = useDispatch();
+  const clearSearched = () => {
+    dispatch({ type: "CLEAR_SEARCHED" });
+  };
+
   return (
     <NavStyled>
-      <Link id="logo" to="/">
+      <Link onClick={clearSearched} id="logo" to="/">
         GameDiscovery
       </Link>
       <ul>

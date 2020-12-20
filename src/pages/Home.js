@@ -20,11 +20,31 @@ const Home = () => {
     dispatch(loadGames());
   }, [dispatch]);
   //Get data back
-  const { popular, newGames, upcoming } = useSelector((state) => state.games);
+  const { popular, newGames, upcoming, searched } = useSelector(
+    (state) => state.games
+  );
 
   return (
     <GameListStyled>
       {pathId && <GameDetail />}
+      {searched.length ? (
+        <div className="searched">
+          <h2>Searched Games</h2>
+          <GamesStyled>
+            {searched.map((game) => (
+              <Game
+                name={game.name}
+                released={game.released}
+                id={game.id}
+                image={game.background_image}
+                key={game.id}
+              />
+            ))}
+          </GamesStyled>
+        </div>
+      ) : (
+        ""
+      )}
       <h2>Upcoming Games</h2>
       <GamesStyled>
         {upcoming.map((game) => (
@@ -66,7 +86,7 @@ const Home = () => {
 };
 
 const GameListStyled = styled.div`
-  padding: 0 10em;
+  /* padding: 0 10em; */
   h2 {
     padding: 1em 0;
   }
@@ -74,7 +94,7 @@ const GameListStyled = styled.div`
 const GamesStyled = styled.div`
   min-height: 80vh;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-column-gap: 2em;
   grid-row-gap: 2em;
 `;
