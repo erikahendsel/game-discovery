@@ -6,6 +6,12 @@ import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { smallImage } from "../util";
 //Images
+import playstationImage from "../img/playstation.svg";
+import steamImage from "../img/steam.svg";
+import xboxImage from "../img/xbox.svg";
+import nintendoImage from "../img/nintendo.svg";
+import appleImage from "../img/apple.svg";
+import gamepadImage from "../img/gamepad.svg";
 import starImage from "../img/star.svg";
 
 const GameDetail = () => {
@@ -16,6 +22,24 @@ const GameDetail = () => {
     if (element.classList.contains("shadow")) {
       document.body.style.overflow = "auto";
       history.push("/");
+    }
+  };
+
+  //platform images
+  const getPlatform = (platform) => {
+    switch (platform) {
+      case "PlayStation 4":
+        return playstationImage;
+      case "Xbox One":
+        return xboxImage;
+      case "PC":
+        return steamImage;
+      case "Nintendo Switch":
+        return nintendoImage;
+      case "iOS":
+        return appleImage;
+      default:
+        return gamepadImage;
     }
   };
 
@@ -31,14 +55,18 @@ const GameDetail = () => {
                 <h3>{game.name}</h3>
                 <div className="rating-stars">
                   <img src={starImage} alt="Rating star" />
-                  <p>{game.rating}</p>
+                  <p>{game.rating} rating</p>
                 </div>
               </div>
               <InfoStyled>
                 <h3>Platforms</h3>
                 <PlatformsStyled>
                   {game.platforms.map((data) => (
-                    <h3 key={data.platform.id}>{data.platform.name}</h3>
+                    <img
+                      src={getPlatform(data.platform.name)}
+                      alt={data.platform.name}
+                      key={data.platform.id}
+                    />
                   ))}
                 </PlatformsStyled>
               </InfoStyled>
@@ -107,9 +135,14 @@ const StatsStyled = styled.div`
   justify-content: space-between;
   .rating-stars {
     display: flex;
+    align-items: center;
+    margin-top: 0.3em;
     img {
-      width: 2em;
-      height: 2em;
+      width: 1.3em;
+      height: 1.3em;
+    }
+    p {
+      margin-left: 0.3em;
     }
   }
 `;
@@ -123,6 +156,9 @@ const PlatformsStyled = styled.div`
   justify-content: space-evenly;
   img {
     margin-left: 3em;
+    margin-top: 0.7em;
+    width: 2em;
+    height: 2em;
   }
 `;
 
