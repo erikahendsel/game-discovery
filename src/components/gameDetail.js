@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { smallImage } from "../util";
+//Images
+import starImage from "../img/star.svg";
 
 const GameDetail = () => {
   const history = useHistory();
@@ -16,6 +18,7 @@ const GameDetail = () => {
       history.push("/");
     }
   };
+
   //Data
   const { screenshots, game, isLoading } = useSelector((state) => state.detail);
   return (
@@ -26,7 +29,10 @@ const GameDetail = () => {
             <StatsStyled>
               <div className="rating">
                 <h3>{game.name}</h3>
-                <p>Rating: {game.rating}</p>
+                <div className="rating-stars">
+                  <img src={starImage} alt="Rating star" />
+                  <p>{game.rating}</p>
+                </div>
               </div>
               <InfoStyled>
                 <h3>Platforms</h3>
@@ -99,6 +105,13 @@ const StatsStyled = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  .rating-stars {
+    display: flex;
+    img {
+      width: 2em;
+      height: 2em;
+    }
+  }
 `;
 
 const InfoStyled = styled.div`
