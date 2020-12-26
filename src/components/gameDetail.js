@@ -13,13 +13,18 @@ import nintendoImage from "../img/nintendo.svg";
 import appleImage from "../img/apple.svg";
 import gamepadImage from "../img/gamepad.svg";
 import starImage from "../img/star.svg";
+import closeBtnImage from "../img/close.svg";
 
 const GameDetail = () => {
   const history = useHistory();
   //Exit Detail
   const exitDetailHandler = (e) => {
     const element = e.target;
-    if (element.classList.contains("shadow")) {
+    console.log(e.target);
+    if (
+      element.classList.contains("shadow") ||
+      element.classList.contains("img-container")
+    ) {
       document.body.style.overflow = "auto";
       history.push("/");
     }
@@ -50,45 +55,52 @@ const GameDetail = () => {
       {!isLoading && (
         <CardShadowStyled className="shadow" onClick={exitDetailHandler}>
           <DetailStyled>
-            <StatsStyled>
-              <div className="rating">
-                <h3>{game.name}</h3>
-                <div className="rating-stars">
-                  <img src={starImage} alt="Rating star" />
-                  <p>{game.rating} rating</p>
-                </div>
+            <CloseButtonStyled onClick={exitDetailHandler}>
+              <div className="img-container">
+                <img src={closeBtnImage} alt="close button" />
               </div>
-              <InfoStyled>
-                <h3>Platforms</h3>
-                <PlatformsStyled>
-                  {game.platforms.map((data) => (
-                    <img
-                      src={getPlatform(data.platform.name)}
-                      alt={data.platform.name}
-                      key={data.platform.id}
-                    />
-                  ))}
-                </PlatformsStyled>
-              </InfoStyled>
-            </StatsStyled>
-            <MediaStyled>
-              <img
-                src={smallImage(game.background_image, 1280)}
-                alt="game image"
-              />
-            </MediaStyled>
-            <DescriptionStyled>
-              <p>{game.description_raw}</p>
-            </DescriptionStyled>
-            <div className="gallery">
-              {screenshots.results.map((screen) => (
+            </CloseButtonStyled>
+            <ContentStyled>
+              <StatsStyled>
+                <div className="rating">
+                  <h3>{game.name}</h3>
+                  <div className="rating-stars">
+                    <img src={starImage} alt="Rating star" />
+                    <p>{game.rating} rating</p>
+                  </div>
+                </div>
+                <InfoStyled>
+                  <h3>Platforms</h3>
+                  <PlatformsStyled>
+                    {game.platforms.map((data) => (
+                      <img
+                        src={getPlatform(data.platform.name)}
+                        alt={data.platform.name}
+                        key={data.platform.id}
+                      />
+                    ))}
+                  </PlatformsStyled>
+                </InfoStyled>
+              </StatsStyled>
+              <MediaStyled>
                 <img
-                  src={smallImage(screen.image, 1280)}
-                  key={screen.id}
-                  alt={screen.id}
+                  src={smallImage(game.background_image, 1280)}
+                  alt="game image"
                 />
-              ))}
-            </div>
+              </MediaStyled>
+              <DescriptionStyled>
+                <p>{game.description_raw}</p>
+              </DescriptionStyled>
+              <div className="gallery">
+                {screenshots.results.map((screen) => (
+                  <img
+                    src={smallImage(screen.image, 1280)}
+                    key={screen.id}
+                    alt={screen.id}
+                  />
+                ))}
+              </div>
+            </ContentStyled>
           </DetailStyled>
         </CardShadowStyled>
       )}
@@ -116,9 +128,12 @@ const CardShadowStyled = styled.div`
   }
 `;
 
+const ContentStyled = styled.div`
+  padding: 0em 5em 2em 5em;
+`;
+
 const DetailStyled = styled.div`
   width: 80%;
-  padding: 2em 5em;
   background: #252525;
   position: absolute;
   left: 10%;
@@ -126,6 +141,22 @@ const DetailStyled = styled.div`
   z-index: 10;
   img {
     width: 100%;
+  }
+`;
+
+const CloseButtonStyled = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  .img-container {
+    background: white;
+    padding: 0.5em 0.5em 1.5em 1.5em;
+    border-bottom-left-radius: 90%;
+    cursor: pointer;
+  }
+  img {
+    width: 2em;
+    height: 2em;
+    pointer-events: none;
   }
 `;
 
