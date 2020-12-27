@@ -41,14 +41,12 @@ const Search = () => {
 const SearchContainerStyled = styled.div`
   position: relative;
   height: 50vh;
-  /* padding: 2em 10em; */
   header {
     display: flex;
     align-items: center;
     height: 100%;
   }
   .search-bar {
-    /* width: 60%; */
     position: absolute;
     padding: 0 2em;
     width: 100%;
@@ -56,7 +54,7 @@ const SearchContainerStyled = styled.div`
   p {
     letter-spacing: 5px;
     text-transform: uppercase;
-    font-size: 1em;
+    font-size: 1rem;
   }
   input {
     width: 65%;
@@ -75,8 +73,6 @@ const SearchContainerStyled = styled.div`
   }
 
   img {
-    /* width: auto;
-    height: 500px; */
     width: 100%;
     height: auto;
     opacity: 0.1;
@@ -86,7 +82,6 @@ const SearchContainerStyled = styled.div`
   }
   @media only screen and (min-width: 750px) {
     .search-bar {
-      /* width: 60%; */
       position: static;
       width: 100%;
       padding: 0 0 0 3em;
@@ -104,7 +99,7 @@ const SearchContainerStyled = styled.div`
       width: 80%;
     }
     p {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
     input {
       width: 60%;

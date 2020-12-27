@@ -25,11 +25,14 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'Lato', sans-serif;
     }
     p {
-        font-size: 1em;
+        font-size: 1rem;
         line-height: 200%;
     }
     h3 {
-        font-size: 1.7em;
+        font-size: 1.2rem;
+        @media only screen and (min-width: 750px) {
+            font-size: 1.5rem;
+        }
     }
     a { 
         text-decoration: none;

@@ -11,12 +11,12 @@ function App() {
     <div className="App">
       <GlobalStyle />
       <Search />
-      {/* <Switch>
+      <Switch>
         <Route path={["/game/:id", "/"]} exact>
           <Home />
         </Route>
-      </Switch> */}
-      <Footer />
+      </Switch>
+      {/* <Footer /> */}
     </div>
   );
 }

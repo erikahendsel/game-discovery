@@ -86,17 +86,36 @@ const Home = () => {
 };
 
 const GameListStyled = styled.div`
-  /* padding: 0 10em; */
+  padding: 0 2em;
   h2 {
     padding: 1em 0;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 1.5rem;
+  }
+  @media only screen and (min-width: 750px) {
+    padding: 0 3em;
+  }
+  @media only screen and (min-width: 1150px) {
+    padding: 0 7em;
+    h2 {
+      font-size: 2rem;
+    }
+  }
+  @media only screen and (min-width: 1500px) {
+    padding: 0 10em;
   }
 `;
 const GamesStyled = styled.div`
   min-height: 80vh;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-column-gap: 2em;
   grid-row-gap: 2em;
+  padding-bottom: 3em;
+  @media only screen and (min-width: 900px) {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
 `;
 
 export default Home;
