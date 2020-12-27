@@ -120,7 +120,7 @@ const CardShadowStyled = styled.div`
     width: 0.5em;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: #ff7676;
+    background-color: #7289da;
   }
   &::-webkit-scrollbar-track {
     background: white;

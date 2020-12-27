@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
             width: 0.5rem;
         }
         &::-webkit-scrollbar-thumb {
-            background-color: darkgrey
+            background-color: darkgrey;
         }
     }
     body {
