@@ -20,7 +20,6 @@ const GameDetail = () => {
   //Exit Detail
   const exitDetailHandler = (e) => {
     const element = e.target;
-    console.log(e.target);
     if (
       element.classList.contains("shadow") ||
       element.classList.contains("img-container")
@@ -61,9 +60,9 @@ const GameDetail = () => {
               </div>
             </CloseButtonStyled>
             <ContentStyled>
+              <h3 className="game-name">{game.name}</h3>
               <StatsStyled>
                 <div className="rating">
-                  <h3>{game.name}</h3>
                   <div className="rating-stars">
                     <img src={starImage} alt="Rating star" />
                     <p>{game.rating} rating</p>
@@ -129,24 +128,49 @@ const CardShadowStyled = styled.div`
 `;
 
 const ContentStyled = styled.div`
-  padding: 0em 5em 2em 5em;
+  padding: 2em;
+  .game-name {
+    font-size: 1.5rem;
+  }
+
+  @media only screen and (min-width: 750px) {
+    padding: 0em 3em 2em 3em;
+    .game-name {
+      font-size: 2rem;
+    }
+  }
+  @media only screen and (min-width: 1150px) {
+    padding: 0em 7em 2em 7em;
+  }
+  @media only screen and (min-width: 1500px) {
+    padding: 0em 10em 2em 10em;
+  }
 `;
 
 const DetailStyled = styled.div`
-  width: 80%;
+  /* width: 80%; */
+  width: 100%;
   background: #252525;
   position: absolute;
-  left: 10%;
+  /* left: 10%; */
+  left: 0%;
   color: black;
   z-index: 10;
   img {
     width: 100%;
+  }
+  @media only screen and (min-width: 750px) {
+    width: 80%;
+    left: 10%;
   }
 `;
 
 const CloseButtonStyled = styled.div`
   display: flex;
   justify-content: flex-end;
+  position: fixed;
+  width: 100%;
+
   .img-container {
     background: white;
     padding: 0.5em 0.5em 1.5em 1.5em;
@@ -158,43 +182,63 @@ const CloseButtonStyled = styled.div`
     height: 2em;
     pointer-events: none;
   }
+  @media only screen and (min-width: 750px) {
+    position: static;
+  }
 `;
 
 const StatsStyled = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media only screen and (max-width: 750px) {
+    padding-top: 1em;
+  }
   .rating-stars {
     display: flex;
     align-items: center;
     margin-top: 0.3em;
+    min-width: 100px;
     img {
-      width: 1.3em;
-      height: 1.3em;
+      width: 1.4em;
+      height: 1.4em;
     }
     p {
-      margin-left: 0.3em;
+      margin-left: 0.4em;
+      margin-top: 0.2em;
     }
   }
 `;
 
 const InfoStyled = styled.div`
   text-align: center;
+  @media only screen and (max-width: 750px) {
+    h3 {
+      font-size: 1rem;
+    }
+  }
 `;
 
 const PlatformsStyled = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+
   img {
-    margin-left: 3em;
+    margin-left: 1em;
     margin-top: 0.7em;
-    width: 2em;
-    height: 2em;
+    width: 1.5em;
+    height: 1.5em;
+  }
+  @media only screen and (min-width: 750px) {
+    img {
+      width: 2em;
+      height: 2em;
+    }
   }
 `;
 
 const MediaStyled = styled.div`
-  margin-top: 5em;
+  margin-top: 3em;
   img {
     width: 100%;
   }
