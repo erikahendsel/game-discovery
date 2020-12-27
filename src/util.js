@@ -1,5 +1,5 @@
+import ImageNotAvailable from "./img/image_not_available.png";
 //Media resize
-
 export const smallImage = (imagePath, size) => {
   let image;
   if (imagePath) {
@@ -10,7 +10,8 @@ export const smallImage = (imagePath, size) => {
         )
       : imagePath.replace("/media/games", `/media/resize/${size}/-/games`);
   } else {
-    image = imagePath;
+    image = ImageNotAvailable;
   }
+  console.log(image);
   return image;
 };
