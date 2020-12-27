@@ -39,35 +39,100 @@ const Search = () => {
 };
 
 const SearchContainerStyled = styled.div`
-  padding: 2em 10em;
+  position: relative;
+  height: 50vh;
+  /* padding: 2em 10em; */
   header {
     display: flex;
     align-items: center;
+    height: 100%;
   }
   .search-bar {
-    width: 60%;
+    /* width: 60%; */
+    position: absolute;
+    padding: 0 2em;
+    width: 100%;
   }
   p {
     letter-spacing: 5px;
     text-transform: uppercase;
-    font-size: 1.5em;
+    font-size: 1em;
   }
   input {
-    width: 55%;
-    font-size: 1.5rem;
+    width: 65%;
+    font-size: 1rem;
     padding: 0.5em;
     border: 2.5px solid #7289da;
   }
   button {
-    font-size: 1.5rem;
+    font-size: 1rem;
     border: none;
-    padding: 0.6em 2em;
+    padding: 0.5em 0;
     background: #7289da;
+    border: 2.5px solid #7289da;
     cursor: pointer;
+    width: 35%;
   }
+
   img {
-    width: auto;
-    height: 500px;
+    /* width: auto;
+    height: 500px; */
+    width: 100%;
+    height: auto;
+    opacity: 0.1;
+    position: absolute;
+    z-index: -5;
+    top: 5px;
+  }
+  @media only screen and (min-width: 750px) {
+    .search-bar {
+      /* width: 60%; */
+      position: static;
+      width: 100%;
+      padding: 0 0 0 3em;
+    }
+    img {
+      position: static;
+      opacity: 1;
+      padding: 0 3em 0 0;
+    }
+  }
+  @media only screen and (min-width: 1150px) {
+    height: 80vh;
+    .search-bar {
+      padding: 0 0 0 7em;
+      width: 80%;
+    }
+    p {
+      font-size: 1.5rem;
+    }
+    input {
+      width: 60%;
+      font-size: 1.5rem;
+    }
+    button {
+      font-size: 1.5rem;
+      width: 20%;
+    }
+    img {
+      padding: 0 7em 0 0;
+    }
+  }
+  @media only screen and (min-width: 1500px) {
+    height: 80vh;
+    .search-bar {
+      padding: 0 0 0 10em;
+      width: 60%;
+    }
+    input {
+      width: 60%;
+    }
+    button {
+      width: 20%;
+    }
+    img {
+      padding: 2em 10em 0 0;
+    }
   }
 `;
 
