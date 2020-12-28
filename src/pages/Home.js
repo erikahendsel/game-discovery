@@ -32,7 +32,7 @@ const Home = () => {
           {pathId && <GameDetail pathId={pathId} />}
         </AnimatePresence>
         {searched.length ? (
-          <div className="searched">
+          <div className="searched" id="searched">
             <h2>Searched Games</h2>
             <GamesStyled>
               {searched.map((game) => (
@@ -47,7 +47,7 @@ const Home = () => {
             </GamesStyled>
           </div>
         ) : (
-          ""
+          <div id="searched"></div>
         )}
         <h2>Upcoming Games</h2>
         <GamesStyled>

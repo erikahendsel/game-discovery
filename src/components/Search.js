@@ -1,9 +1,13 @@
 import styled from "styled-components";
+import heroImage from "../img/hollow-knight-hero.png";
+import { Link } from "react-scroll";
 // Redux and Routes
 import { fetchSearch } from "../actions/gamesAction";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
-import heroImage from "../img/hollow-knight-hero.png";
+//Animation
+import { fadeIn, slideInRight } from "../animations";
+import { motion } from "framer-motion";
 
 const Search = () => {
   const dispatch = useDispatch();
@@ -21,24 +25,36 @@ const Search = () => {
   return (
     <SearchContainerStyled>
       <header>
-        <div className="search-bar">
+        <motion.div
+          className="search-bar"
+          variants={slideInRight}
+          initial="hidden"
+          animate="show"
+        >
           <p>Search for games</p>
           <form className="search">
             <input value={textInput} onChange={inputHandler} type="text" />
-            <button onClick={submitSearch} type="submit">
-              Search
-            </button>
+            <Link to="searched" spy={true} smooth={true}>
+              <button onClick={submitSearch} type="submit">
+                Search
+              </button>
+            </Link>
           </form>
-        </div>
-        <div className="hero">
+        </motion.div>
+        <motion.div
+          className="hero"
+          variants={fadeIn}
+          initial="hidden"
+          animate="show"
+        >
           <img src={heroImage} alt="hollow knight" />
-        </div>
+        </motion.div>
       </header>
     </SearchContainerStyled>
   );
 };
 
-const SearchContainerStyled = styled.div`
+const SearchContainerStyled = styled(motion.div)`
   position: relative;
   height: 50vh;
   header {
