@@ -9,6 +9,8 @@ import { smallImage } from "../util";
 //Icon
 /* Helpful article about importing svg: https://dev.to/abachi/how-to-change-svg-s-color-in-react-42g2 */
 import { ReactComponent as HeartIcon } from "../img/heart-icon.svg";
+//Animation
+import { popup } from "../animations";
 
 const Game = ({ name, released, image, id }) => {
   const stringPathId = id.toString();
@@ -20,7 +22,13 @@ const Game = ({ name, released, image, id }) => {
   };
 
   return (
-    <GameStyled layoutId={stringPathId} onClick={loadDetailHandler}>
+    <GameStyled
+      variants={popup}
+      initial="hidden"
+      animate="show"
+      layoutId={stringPathId}
+      onClick={loadDetailHandler}
+    >
       <Link to={`/game/${id}`}>
         <div className="game-info">
           <motion.h3 layoutId={`title ${stringPathId}`}>{name}</motion.h3>
