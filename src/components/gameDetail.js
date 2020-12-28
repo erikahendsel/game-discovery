@@ -15,7 +15,7 @@ import gamepadImage from "../img/gamepad.svg";
 import starImage from "../img/star.svg";
 import closeBtnImage from "../img/close.svg";
 
-const GameDetail = () => {
+const GameDetail = ({ pathId }) => {
   const history = useHistory();
   //Exit Detail
   const exitDetailHandler = (e) => {
@@ -34,6 +34,12 @@ const GameDetail = () => {
     switch (platform) {
       case "PlayStation 4":
         return playstationImage;
+      case "PlayStation 5":
+        return playstationImage;
+      case "Xbox Series S/X":
+        return xboxImage;
+      case "Xbox S":
+        return xboxImage;
       case "Xbox One":
         return xboxImage;
       case "PC":
@@ -53,14 +59,16 @@ const GameDetail = () => {
     <>
       {!isLoading && (
         <CardShadowStyled className="shadow" onClick={exitDetailHandler}>
-          <DetailStyled>
+          <DetailStyled layoutId={pathId}>
             <CloseButtonStyled onClick={exitDetailHandler}>
               <div className="img-container">
                 <img src={closeBtnImage} alt="close button" />
               </div>
             </CloseButtonStyled>
             <ContentStyled>
-              <h3 className="game-name">{game.name}</h3>
+              <motion.h3 layoutId={`title ${pathId}`} className="game-name">
+                {game.name}
+              </motion.h3>
               <StatsStyled>
                 <div className="rating">
                   <div className="rating-stars">
@@ -82,7 +90,8 @@ const GameDetail = () => {
                 </InfoStyled>
               </StatsStyled>
               <MediaStyled>
-                <img
+                <motion.img
+                  layoutId={`image ${pathId}`}
                   src={smallImage(game.background_image, 1280)}
                   alt="game image"
                 />
@@ -107,7 +116,7 @@ const GameDetail = () => {
   );
 };
 
-const CardShadowStyled = styled.div`
+const CardShadowStyled = styled(motion.div)`
   width: 100%;
   min-height: 100vh;
   overflow-y: scroll;
@@ -127,7 +136,7 @@ const CardShadowStyled = styled.div`
   }
 `;
 
-const ContentStyled = styled.div`
+const ContentStyled = styled(motion.div)`
   padding: 2em;
   .game-name {
     font-size: 1.5rem;
@@ -147,7 +156,7 @@ const ContentStyled = styled.div`
   }
 `;
 
-const DetailStyled = styled.div`
+const DetailStyled = styled(motion.div)`
   /* width: 80%; */
   width: 100%;
   background: #252525;
@@ -165,7 +174,7 @@ const DetailStyled = styled.div`
   }
 `;
 
-const CloseButtonStyled = styled.div`
+const CloseButtonStyled = styled(motion.div)`
   display: flex;
   justify-content: flex-end;
   position: fixed;

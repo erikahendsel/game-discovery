@@ -46,6 +46,9 @@ const GlobalStyle = createGlobalStyle`
     input {
         font-weight: bold;
     }
+    img {
+        display: block;
+    }
 `;
 
 export default GlobalStyle;

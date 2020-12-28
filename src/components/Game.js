@@ -11,6 +11,7 @@ import { smallImage } from "../util";
 import { ReactComponent as HeartIcon } from "../img/heart-icon.svg";
 
 const Game = ({ name, released, image, id }) => {
+  const stringPathId = id.toString();
   //Load Detail Handler
   const dispatch = useDispatch();
   const loadDetailHandler = () => {
@@ -19,19 +20,23 @@ const Game = ({ name, released, image, id }) => {
   };
 
   return (
-    <GameStyled onClick={loadDetailHandler}>
+    <GameStyled layoutId={stringPathId} onClick={loadDetailHandler}>
       <Link to={`/game/${id}`}>
         <div className="game-info">
-          <h3>{name}</h3>
+          <motion.h3 layoutId={`title ${stringPathId}`}>{name}</motion.h3>
           <p>{released}</p>
         </div>
-        <img src={smallImage(image, 640)} alt={name} />
+        <motion.img
+          layoutId={`image ${stringPathId}`}
+          src={smallImage(image, 640)}
+          alt={name}
+        />
       </Link>
     </GameStyled>
   );
 };
 
-const GameStyled = styled.div`
+const GameStyled = styled(motion.div)`
   position: relative;
   min-height: 20vh;
   background: #4a4d54;
@@ -43,6 +48,10 @@ const GameStyled = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    h3,
+    p {
+      cursor: pointer;
+    }
   }
 
   img {
