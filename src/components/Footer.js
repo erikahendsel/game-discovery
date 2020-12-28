@@ -68,10 +68,7 @@ const FooterStyled = styled.div`
   line-height: 30px;
   width: 100%;
   margin-top: 2em;
-  padding-top: 2em;
-  padding-bottom: 3em;
-  padding-left: 2em;
-  padding-right: 2em;
+  padding: 2em 2em 3em 2em;
   display: grid;
   grid-column-gap: 1em;
   grid-row-gap: 1em;
