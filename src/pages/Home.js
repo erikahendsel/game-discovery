@@ -41,6 +41,7 @@ const Home = () => {
                   released={game.released}
                   id={game.id}
                   image={game.background_image}
+                  rating={game.rating}
                   key={game.id}
                 />
               ))}
@@ -57,6 +58,7 @@ const Home = () => {
               released={game.released}
               id={game.id}
               image={game.background_image}
+              rating={game.rating}
               key={game.id}
             />
           ))}
@@ -69,6 +71,7 @@ const Home = () => {
               released={game.released}
               id={game.id}
               image={game.background_image}
+              rating={game.rating}
               key={game.id}
             />
           ))}
@@ -81,6 +84,7 @@ const Home = () => {
               released={game.released}
               id={game.id}
               image={game.background_image}
+              rating={game.rating}
               key={game.id}
             />
           ))}

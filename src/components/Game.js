@@ -12,7 +12,7 @@ import { ReactComponent as HeartIcon } from "../img/heart-icon.svg";
 //Animation
 import { popup } from "../animations";
 
-const Game = ({ name, released, image, id }) => {
+const Game = ({ name, released, image, id, rating }) => {
   const stringPathId = id.toString();
   //Load Detail Handler
   const dispatch = useDispatch();
@@ -51,21 +51,28 @@ const GameStyled = styled(motion.div)`
   text-align: center;
   cursor: pointer;
   overflow: hidden;
+  transition: ease 0.2s all;
+
+  :hover {
+    box-shadow: 0px 0px 20px #7289da;
+  }
+  img {
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+    transition: ease 0.2s all;
+  }
   .game-info {
     min-height: 90px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     h3,
     p {
       cursor: pointer;
     }
   }
-
-  img {
-    width: 100%;
-    height: 30vh;
-    object-fit: cover;
-  }
 `;
+
 export default Game;
