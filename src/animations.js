@@ -37,7 +37,7 @@ export const popup = {
 };
 export const slideInRight = {
   hidden: {
-    x: 100,
+    x: 300,
   },
   show: {
     x: 0,

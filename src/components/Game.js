@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 import { smallImage } from "../util";
 //Icon
 /* Helpful article about importing svg: https://dev.to/abachi/how-to-change-svg-s-color-in-react-42g2 */
-import { ReactComponent as HeartIcon } from "../img/heart-icon.svg";
 //Animation
 import { popup } from "../animations";
 

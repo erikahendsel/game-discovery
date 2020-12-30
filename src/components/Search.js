@@ -64,7 +64,6 @@ const SearchContainerStyled = styled(motion.div)`
   }
   .search-bar {
     position: absolute;
-    padding: 0 2em;
     width: 100%;
   }
   p {
@@ -100,18 +99,15 @@ const SearchContainerStyled = styled(motion.div)`
     .search-bar {
       position: static;
       width: 100%;
-      padding: 0 0 0 3em;
     }
     img {
       position: static;
       opacity: 1;
-      padding: 0 3em 0 0;
     }
   }
   @media only screen and (min-width: 1150px) {
     height: 80vh;
     .search-bar {
-      padding: 0 0 0 7em;
       width: 80%;
     }
     p {
@@ -125,14 +121,10 @@ const SearchContainerStyled = styled(motion.div)`
       font-size: 1.5rem;
       width: 20%;
     }
-    img {
-      padding: 0 7em 0 0;
-    }
   }
   @media only screen and (min-width: 1500px) {
     height: 80vh;
     .search-bar {
-      padding: 0 0 0 10em;
       width: 60%;
     }
     input {
@@ -142,7 +134,7 @@ const SearchContainerStyled = styled(motion.div)`
       width: 20%;
     }
     img {
-      padding: 2em 10em 0 0;
+      padding-top: 5em;
     }
   }
 `;

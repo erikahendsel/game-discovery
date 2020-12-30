@@ -3,15 +3,12 @@ import Footer from "./components/Footer";
 import GlobalStyle from "./components/GlobalStyle";
 import NotFoundPage from "./components/NotFoundPage";
 
-import Search from "./components/Search";
-
 import Home from "./pages/Home";
 
 function App() {
   return (
     <div className="App">
       <GlobalStyle />
-
       <Switch>
         <Route path={["/game/:id", "/"]} exact>
           <Home />

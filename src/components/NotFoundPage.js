@@ -8,7 +8,7 @@ const NotFoundPage = () => {
     <ContainerStyled>
       <h1>Page not found</h1>
       <ContentStyled>
-        <img src={sadMarioImage} alt="Sad mario face image" />
+        <img src={sadMarioImage} alt="Sad mario face" />
         <Link to="/">
           <button>Go to Home page</button>
         </Link>

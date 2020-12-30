@@ -8,22 +8,25 @@ const Footer = () => {
         <ul>
           <li>
             E-mail:{" "}
-            <a href="mailto:erikahendsel@hotmail.com?subject=Greetings">
-              erikahendsel@hotmail.com
-            </a>
+            <a href="mailto:erikahendsel@gmail.com">erikahendsel@gmail.com</a>
           </li>
           <li>
             LinkedIn:{" "}
             <a
               href="https://linkedin.com/in/erika-hendsel-67b2111a5/"
               target="_blank"
+              rel="noopener noreferrer"
             >
               Erika Hendsel
             </a>
           </li>
           <li>
             Website:{" "}
-            <a href="http://erikahendsel.com/" target="_blank">
+            <a
+              href="http://erikahendsel.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               erikahendsel.com
             </a>
           </li>
@@ -34,13 +37,21 @@ const Footer = () => {
         <ul>
           <li>
             GitHub:{" "}
-            <a href="https://github.com/erikahendsel" target="_blank">
+            <a
+              href="https://github.com/erikahendsel"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               erikahendsel
             </a>
           </li>
           <li>
             API:{" "}
-            <a href="https:/rawg.io/apidocs" target="_blank">
+            <a
+              href="https:/rawg.io/apidocs"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               www.rawg.io/apidocs
             </a>
           </li>
@@ -52,7 +63,11 @@ const Footer = () => {
           <li>CV: click here to view/download CV pdf (coming soon)</li>
           <li>
             Other projects:{" "}
-            <a href="http://erikahendsel.com/" target="_blank">
+            <a
+              href="http://erikahendsel.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               erikahendsel@hotmail.com
             </a>
           </li>

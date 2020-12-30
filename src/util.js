@@ -12,6 +12,5 @@ export const smallImage = (imagePath, size) => {
   } else {
     image = ImageNotAvailable;
   }
-  console.log(image);
   return image;
 };
