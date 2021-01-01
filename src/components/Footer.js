@@ -57,7 +57,7 @@ const Footer = () => {
           </li>
         </ul>
       </div>
-      <div className="footer-container">
+      {/* <div className="footer-container">
         <p className="footer-title">CV</p>
         <ul>
           <li>CV: click here to view/download CV pdf (coming soon)</li>
@@ -72,7 +72,7 @@ const Footer = () => {
             </a>
           </li>
         </ul>
-      </div>
+      </div> */}
     </FooterStyled>
   );
 };
